@@ -10,6 +10,8 @@
   - Environment Setup
 - Advantages of Configuration
 - External Dependencies
+- Database Setup
+- Folder Structure
 
 ## Steps to Run the App
 
@@ -59,6 +61,32 @@ The app uses the following external dependencies:
 - **express** (Version 4.18.2): A fast, unopinionated, minimalist web framework for Node.js.
 
 - **mysql2** (Version 3.6.1): A MySQL client library for Node.js that provides easy access to MySQL databases.
+
+### Database Setup
+
+Open MySQL Workbench: Launch MySQL Workbench if it's not already open.
+
+Connect to a MySQL Server: Connect to the MySQL server where you want to import the database.
+
+Import the Database:
+
+- In the top menu, click on "Server" and then select "Data Import" from the dropdown menu.
+
+- In the "Data Import/Restore" wizard that appears, select the "Import from Self-Contained File" option. Click the "..." button to browse and select the SQL file that contains your database data and structure. You ca find the sql file in the database directory of this application
+
+- Choose the "Default Target Schema" or select a specific schema from the dropdown where you want to import the data.
+
+- Under the "Import Progress" tab, you can review the import options and configurations. Make sure they match your needs.
+
+- Click the "Start Import" button to begin the database import process.
+
+Monitor the Import Progress: MySQL Workbench will display the progress of the import operation. You can see information about the tables being created and data being inserted.
+
+Completion: Once the import is complete, you should see a success message indicating that the process finished without errors.
+
+Verify the Imported Database: In the "Navigator" panel, expand the schema where you imported the database. You should now see the imported tables and data.
+
+After importing make sure to update the database related configurations in the `.env` file in this project
 
 ### Folder Structure
 
